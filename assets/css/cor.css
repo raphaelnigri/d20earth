@@ -1,0 +1,10 @@
+:root {
+	--text_1: goldenrod;
+	--text_2:  #C9B037 ;
+	--text_3:  #f0f0f0 ;
+	--text_4: #e6c200;
+	--bg: #333;
+	--bg_menu: #2b2b2b;
+	--bg_footer: linear-gradient(145deg, #1e1a14, #2d241b);
+	--bar:#c9a44f;
+}

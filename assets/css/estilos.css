@@ -1,0 +1,219 @@
+body {
+    display: grid;
+    grid-template-columns: 230px 1fr; /* 200px para o menu e o restante para o conteúdo */
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lora', serif;
+    cursor: default; /* Impede que o cursor mude para a seleção de texto */
+}
+
+main {
+    background: var(--bg);
+    height: 100vh;
+    overflow-y: auto;
+    text-align: center;
+}
+
+.main--img_card {
+    width: calc(100% - 14px);
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 2px;
+ 
+    position: relative; /* Permite posicionamento absoluto dentro dele */
+    overflow: hidden; /* Garante que nada escape da borda arredondada */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 15px; /* Borda arredondada */
+    box-shadow: 4px 8px 10px rgba(0, 0, 0, 0.5); /* Sombra para efeito de profundidade */
+    border: 2px solid transparent; /* Define a borda como transparente para o gradiente */
+    background-image: linear-gradient(145deg, #3a2d1e, #6d5d45), 
+                      linear-gradient(145deg, #c9a44f, #e6c200); /* Gradiente metálico dourado */
+    background-origin: border-box;
+    background-clip: content-box, border-box; /* Cria o efeito de borda metálica */
+}
+
+.main--img_abertura {
+    width: 100%;
+    height: 65vh;
+    object-fit: cover;
+    display: block;
+    border-radius: 20px; /* Bordas arredondadas para combinar com o card */
+}
+
+.main--img_abertura--text {
+    position: absolute; /* Fica em relação ao .main--img_card */
+    top: 36%; /* Move para o meio verticalmente */
+    left: 50%; /* Move para o meio horizontalmente */
+    transform: translate(-50%, -50%); /* Centraliza com precisão */
+    text-transform: uppercase;
+    color: var(--bar);
+    font-size: 2.4rem;
+    font-family: 'Cinzel', serif;
+    font-weight: bold; /* Deixa o texto em negrito */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); /* Melhora a legibilidade */
+}
+
+.texto_introducao{
+    color: var(--text_2);
+    font-size: 2rem;
+    font-family: 'Cinzel', serif;
+    text-align: center;
+    padding-top: 18px;
+    padding-left: 4px;
+    padding-right: 4px;
+    margin-bottom: 4px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 1); /* Melhora a legibilidade */
+}
+
+.content_center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.botao-moldura {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--text_2);
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 8px 16px;
+    border: 2px solid var(--text_2);
+    border-radius: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 4px 8px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 24px;
+}
+
+.botao-moldura:hover {
+    background: linear-gradient(145deg, #3a2d1e, #6d5d45); /* Dark metal gradient */
+    border: 2px solid #c9a44f; /* Gold-like frame */
+    border-radius: 50px;
+    padding: 8px 16px;
+    box-shadow: 
+        6px 10px 12px rgba(0, 0, 0, 0.5),
+        inset 0 0 15px rgba(255, 215, 0, 0.3), /* Inner gold glow */
+        0 0 20px rgba(255, 223, 127, 0.5); /* Outer glow */
+        
+    text-align: center;
+    font-family: 'Cinzel', serif; /* Medieval-style font */
+    color: var(--text_4);
+    text-transform: uppercase;
+    display: inline-block;
+    width: fit-content;
+    transform: scale(1.06); /* Slightly enlarges the button */
+}
+
+
+.wrapper{
+    margin-top: 24px;
+    margin-left: 30px;
+    margin-bottom: 24px;
+}
+
+.metallic-wrapper {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    background: linear-gradient(145deg, #3a2d1e, #6d5d45); /* Dark metal gradient */
+    border: 3px solid var(--bar); /* Gold-like frame */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 
+        inset 0 0 15px rgba(255, 215, 0, 0.3), /* Inner gold glow */
+        0 0 20px rgba(255, 223, 127, 0.5); /* Outer glow */
+    font-family: 'Cinzel', serif; /* Medieval-style font */
+    display: inline-block;
+    width: fit-content;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.metallic-wrapper--barless{
+    border: 0px;
+}
+
+.metallic-wrapper h2 {
+    text-align: center;
+    color: var(--text_4);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.bullet {
+    margin-left: 20px;
+    margin-top: 16px;
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    color: var(--text_3);
+        display: flex;
+    align-items: center;
+    gap: 10px; /* Space between bullet and text */
+    line-height: 1.4;
+    margin-bottom: 8px;
+    padding-left: 4px;
+    padding-right: 4px;
+    text-align: justify;
+}
+
+/* Custom golden bullet (rune-like style) */
+.bullet::before {
+    content: "✦"; /* Can be customized with another symbol */
+    font-size: 1.1rem;
+    color: var(--text_1);
+}
+
+.text p{
+    margin-left: 20px;
+    margin-top: 16px;
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    color: var(--text_3);
+    line-height: 1.4;
+    text-align: justify;
+    padding-left: 4px;
+    padding-right: 4px;
+    text-indent: 1.5em;
+}
+
+.title-page{
+    width: 50vw;
+    padding: 4px;
+}
+
+.off{
+    display: none;
+}
+
+
+p a {
+    color: var(--text_4) !important;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+p a:hover{
+    color: var(--text_1) !important;
+}
+
+@media (max-width: 800px) {
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    main{
+        margin-top: 64px;
+    }
+}

@@ -1,0 +1,148 @@
+.menu-lateral {
+    width: 200px;
+    background: var(--bg_menu);
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    height: 100vh;
+    box-shadow: inset -6px 0px 10px 0px rgba(0,0,0,0.5);
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    font-family: 'Cinzel', serif;
+}
+
+.menu-lateral::before {
+    content: "";
+    position: absolute;
+    left: 0; /* Mantém a barra encostada na esquerda */
+    top: 0;
+    height: 100%;
+    width: 4px; /* Largura da barra */
+    background-color: var(--bar); /* Cor da barra */
+    transition: 0.3s; /* Animação suave */
+}
+
+.menu-lateral--tit {
+    text-transform: uppercase;
+    color: var(--bar);
+    font-size: 1.6rem;
+    padding-bottom: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* Mantém o pseudo-elemento posicionado em relação a este elemento */
+    font-family: 'Lora', serif;
+}
+
+.menu-lateral--tit::after {
+    content: "";
+    position: absolute; /* Para controlar a posição */
+    bottom: -6px; /* Ajusta para aparecer logo abaixo do título */
+    left: -20px; /* Encosta na esquerda */
+    width: 109%; /* Define o comprimento da barra (ajuste se quiser maior/menor) */
+    height: 3px; /* Espessura da barra */
+    background-color: var(--bar); /* Cor da barra */
+}
+
+.menu--img_tit {
+    width: 110px;
+    height: 40px;
+    padding-bottom: 4px;
+    object-fit: contain; /* Garante que a imagem não será distorcida */
+}
+
+.menu-lateral--lista {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.menu-lateral ul li {
+    margin: 28px 0;
+}
+
+.link {
+    color: #f0f0f0;
+    font-size: 1.1rem;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.link:hover {
+    color: var(--text_1);
+}
+
+.link:hover::after {
+    content:"◀ \f522";
+    font: var(--fa-font-solid);
+    font-size: 0.75em;
+    margin-left: 8px;
+}
+
+.link::before {
+    padding-right: 8px;
+    font: var(--fa-font-solid);
+}
+
+.link--ativo{
+    color: var(--text_4);
+}
+
+.link--ativo::after {
+    content: "◀ \f522";
+    font: var(--fa-font-solid);
+    margin-left: 8px;
+    font-size: 0.75em;
+}
+
+.icon--inicio::before {
+    content: "\f015";
+}
+.icon--faq::before {
+    content: "\f0c0";
+}
+.icon--info::before {
+    content: "\f02d";
+}
+.icon--novidade::before {
+    content: "\f0a1";
+}
+
+.menu--img_baixo {
+    width: 180px;
+    object-fit: contain; /* Evita deformar a imagem */
+    align-self: center;
+}
+
+@media (max-width: 800px) {
+    .menu-lateral {
+        position: absolute;
+        width: 250px;
+        left: -300px;
+        top: 60px;
+        height: calc(100vh - 60px);
+        background: linear-gradient(145deg, #3a2d1e, #6d5d45); /* Dark metal gradient */
+        border: 4px solid #c9a44f; /* Gold-like frame */
+        box-shadow: 
+            inset 0 0 15px rgba(255, 215, 0, 0.3), /* Inner gold glow */
+            0 0 20px rgba(255, 223, 127, 0.5); /* Outer glow */
+        box-sizing: border-box; /* Garante que a borda não aumente o tamanho */
+        transition: ease-in-out;
+    }
+
+    .menu-lateral--ativo{
+        left: auto;
+        right: 0px;
+    }
+
+    .menu--img_baixo {
+        width: 100px;
+    }
+
+    .menu-lateral--tit {
+        display: none;
+    }
+}

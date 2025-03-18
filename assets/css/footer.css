@@ -1,0 +1,64 @@
+footer {
+    background: var(--bg_footer);
+    border-top: 3px solid var(--bar); /* Linha dourada separando do conteúdo acima */
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    color: var(--text_1);
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.footer-faq {
+    margin-top: 60px;
+}
+
+.footer-text {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    opacity: 0.9;
+    width: 100%; /* Garante que ocupe toda a largura */
+    margin-bottom: 20px; /* Espaço entre a frase e os ícones */
+}
+
+.footer-icons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    width: 100%;
+}
+
+.footer-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--text_1); /* Cor dourada */
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.footer-icons a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255, 223, 127, 0.8); /* Brilho dourado */
+    cursor: pointer;
+}
+
+.footer-icons a img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1); /* Deixa os ícones brancos */
+}
+
+.copyright {
+    width: 100%;
+    margin-top: 20px;
+    font-size: 0.8rem;
+    opacity: 0.7;
+    font-weight: normal;
+    text-transform: uppercase;
+}
